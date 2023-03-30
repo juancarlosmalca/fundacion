@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Mi Perfil</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button color="primary"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card>
+    <ion-card-content style="text-align: center;">
+      <ion-icon style="height: 200px;" color="primary" name="person-circle"></ion-icon>
+      <ion-title>{{cliente.nombre_cliente}} {{cliente.apellido_cliente}}</ion-title>
+      <ion-item>
+        <ion-icon color="primary" name="id-card" slot="start"></ion-icon>
+        <p>{{cliente.cedula_cliente}}</p>
+      </ion-item>
+      <ion-item>
+        <ion-icon color="primary" name="call" slot="start"></ion-icon>
+        <p>{{cliente.telefono_cliente}}</p>
+      </ion-item>
+      <ion-item>
+        <ion-icon color="primary" name="navigate" slot="start"></ion-icon>
+        <p>{{cliente.direccion_cliente}}</p>
+      </ion-item>
+      <ion-item>
+        <ion-icon color="primary" name="mail" slot="start"></ion-icon>
+        <p>{{usuario.email_usuario}}</p>
+      </ion-item>
+
+    </ion-card-content>
+      <ion-toolbar>
+        <ion-buttons slot="end">
+          <ion-button fill="outline" color="tertiary" (click)="editarCliente(cliente)">
+            <ion-icon name="create"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+  </ion-card>
+
+</ion-content>

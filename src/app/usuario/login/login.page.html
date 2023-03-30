@@ -1,0 +1,28 @@
+<ion-content class="container">
+  <ion-content class="content">
+    <div class="ng-star-inserted">
+      <div class="wrapper">
+        <div class="left-bg"></div>
+        <div class="login-container">
+          <form [formGroup]="loginForm" (ngSubmit)="login()">
+            <img src="assets/pae_logotipo.png">
+            <h1>¡Bienvenido!</h1>
+
+            <ion-item>
+              <ion-label position="floating">Correo electrónico</ion-label>
+              <ion-input type="email" formControlName="email" [(ngModel)]="email"></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="floating">Contraseña</ion-label>
+              <ion-input type="password" formControlName="password" [(ngModel)]="password"></ion-input>
+            </ion-item>
+            <ion-button type="submit" expand="block" [disabled]="!loginForm.valid">Iniciar sesión</ion-button>
+            <p class="ion-text-center">¿No tienes una cuenta? <a (click)="goToRegister()">Regístrate</a></p>
+            <a href="/forgot-password">Olvidé mi contraseña</a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-content>

@@ -1,0 +1,92 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{title}}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="solid" color="danger" (click)="cancel()"><ion-icon name="close"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <form [formGroup]="formMascota">
+
+    <ion-card-content>
+
+
+      <div>
+        <input type="hidden" name="id_mascota" readonly formControlName="id_mascota">
+      </div>
+      <ion-item>
+        <ion-label position="floating">Nombre:</ion-label>
+        <ion-input type="text" formControlName="nombre_mascota" name="nombre_mascota"></ion-input>
+      </ion-item>
+  
+  
+      <ion-item>
+        <ion-label position="floating">Raza:</ion-label>
+  
+        <ion-input type="raza" name="raza_mascota" formControlName="raza_mascota"></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label position="floating">Peso en Kg: (Opcional)</ion-label>
+        <ion-input type="number" name="peso_mascota" formControlName="peso_mascota" ></ion-input>
+      </ion-item>
+  
+  
+      <ion-item>
+        <ion-label>Sexo:</ion-label>
+  
+        <ion-radio-group formControlName="sexo_mascota" name="sexo_mascota">
+          <ion-row>
+            <ion-item>
+              <ion-label>Macho</ion-label>
+              <ion-radio slot="start" value="Macho"></ion-radio>
+            </ion-item>
+    
+            <ion-item>
+              <ion-label>Hembra</ion-label>
+              <ion-radio slot="start" value="Hembra"></ion-radio>
+            </ion-item>
+          </ion-row>
+     
+        </ion-radio-group>
+      </ion-item>
+      <ion-item>
+  
+        <ion-label>Tamaño:</ion-label>
+        <ion-select placeholder="Seleccione el tamaño" formControlName="tamano_mascota" name="tamano_mascota">
+          <ion-select-option value="Grande">Grande</ion-select-option>
+          <ion-select-option value="Mediano">Mediano</ion-select-option>
+          <ion-select-option value="Pequeño">Pequeño</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>Especie</ion-label>
+        <ion-select placeholder="Seleccione un tipo de mascota" formControlName="especie_mascota" name="especie_mascota">
+          <ion-select-option value="perro">Canino</ion-select-option>
+          <ion-select-option value="gato">Felino</ion-select-option>
+          <ion-select-option value="otro">Otro</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Fecha de nacimiento:</ion-label>
+        <ion-input name="nacimiento_mascota"  formControlName="nacimiento_mascota" (click)="abrirSelectorFecha()"
+          readonly></ion-input>
+      </ion-item>
+ 
+      <ion-item>
+        <ion-label position="floating">Observaciones (Alergias, enfermedades, sindromes, etc)</ion-label>
+        <ion-input  type="text" name="observaciones_mascota" formControlName="observaciones_mascota"></ion-input>
+      </ion-item>
+
+    </ion-card-content>
+    <ion-footer>
+      <ion-toolbar>
+        <ion-buttons slot="end">
+          <ion-button fill="solid" color="danger" (click)="cancel()">Cancelar</ion-button>
+          <ion-button fill="solid" color="success" (click)="save()">Guardar</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-footer>
+  </form>
+</ion-content>

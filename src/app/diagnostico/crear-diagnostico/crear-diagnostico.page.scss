@@ -1,0 +1,19 @@
+.contenedor {
+  width: 400px;
+}
+
+.input-ajustado {
+  width: 100%;
+  word-wrap: break-word;
+}
+.contenedor ion-item {
+  margin: 10px;
+}
+
+.list-container {
+  display: grid;
+  padding: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  grid-gap: 20px;
+}
+

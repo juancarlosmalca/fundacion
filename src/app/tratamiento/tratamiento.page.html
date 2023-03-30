@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button color="primary"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="title">Tratamientos</ion-title>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let tratamiento of tratamientos" (click)="verDetalle(tratamiento.id_tratamiento)">
+      <ion-icon class="icono" name="newspaper-outline" slot="start"></ion-icon>
+      <ion-card-header>
+        <ion-card-subtitle>{{tratamiento.duracion_tratamiento}}</ion-card-subtitle>
+        <p><strong>Duración:</strong> {{ tratamiento.duracion_tratamiento }} días</p>
+      </ion-card-header>
+      <ion-icon name="chevron-forward" slot="end"></ion-icon>
+    </ion-item>
+  </ion-list>
+</ion-content>

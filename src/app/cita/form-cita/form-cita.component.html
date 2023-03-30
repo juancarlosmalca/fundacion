@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{title}}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="solid" color="danger" (click)="cancel()"><ion-icon name="close"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <form [formGroup]="formCita">
+    <div>
+      <input type="hidden" name="id_cita" readonly formControlName="id_cita">
+    </div>
+    <ion-card-content>
+      <ion-item fill="outline">
+        <ion-label><ion-icon class="icono" name="paw"></ion-icon> Animalito:</ion-label>
+        <ion-select placeholder="Animalito" name="mascota" formControlName="id_mascota">
+          <ion-select-option *ngFor="let mascota of mascotas"
+            [value]="mascota.id_mascota">{{mascota.nombre_mascota}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <br>
+
+      <ion-item fill="outline">
+        <ion-label>Motivo</ion-label>
+        <ion-select placeholder="Seleccione" formControlName="motivo_cita" name="motivo_cita">
+          <ion-select-option value="Esterilizacion">Esterilizacion</ion-select-option>
+          <ion-select-option value="otro">Otro</ion-select-option>
+        </ion-select>
+      </ion-item>
+<!--
+               El siguiente código solo se mostrará si se está creando un nuevo usuario 
+              <ion-item fill="outline" [hidden]="!visible">
+                <ion-label position="floating">Contraseña</ion-label>
+                <ion-input type="password" name="password_usuario" formControlName="password_usuario"></ion-input>
+              </ion-item>
+              El siguiente código solo se mostrará si se está editando un usuario 
+              <br>
+              <ion-item [hidden]="visible">
+                <a href="URL_DE_RESET_PASSWORD">Restaurar Contraseña</a>
+              </ion-item>
+
+            -->
+
+
+      <br>
+      <ion-item fill="outline">
+        <ion-datetime displayFormat="YYYY/MM/DD" presentation="date" formControlName="fecha_cita" name="fecha_cita"
+          [isDateEnabled]="isWeekday" :disabledDates="`${getDisabledDates()}`">
+        </ion-datetime>
+      </ion-item>
+      <br>
+      <ion-item fill="outline">
+        <ion-label>Horario:</ion-label>
+        <ion-select placeholder="(00:00:00) - (00:00:00)" name="id_horario" formControlName="id_horario">
+          <ion-select-option *ngFor="let horario of horarios" [value]="horario.id_horario">{{horario.hora_inicio}} -
+            {{horario.hora_fin}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-card-content>
+    <ion-footer>
+      <ion-toolbar>
+        <ion-buttons slot="end">
+          <ion-button fill="solid" color="danger" (click)="cancel()">Cancelar</ion-button>
+          <ion-button fill="solid" color="success" (click)="save()">Guardar</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-footer>
+  </form>
+
+
+
+</ion-content>

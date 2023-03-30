@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button color="primary"></ion-back-button>
+    </ion-buttons>
+    <ion-title color="primary">Citas</ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="outline" color="primary" (click)="filtrar()">
+        <ion-icon name="filter"></ion-icon>
+        Filtrar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="list-container">
+
+    <div *ngFor="let cita of citas" [style.background-color]="cita.estado_cita">
+      <ion-card>
+        <div class="expired-appointment">
+        </div>
+        <ion-card-header>
+          <ion-card-subtitle>{{cita.fecha_cita }}</ion-card-subtitle>
+          <ion-card-title class="title"><strong>Paciente: </strong> {{cita.nombre_mascota}}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content style="padding-right: 0%;">
+          <p><strong>Motivo:</strong> {{cita.motivo_cita }}</p>
+          <p><strong>Hora:</strong> {{ cita.hora_inicio }} - {{ cita.hora_fin }}</p>
+          <footer>
+            <ion-toolbar>
+              <ion-buttons slot="end">
+                <ion-button fill="outline" color="primary" (click)="goToDiagnostico(cita.id_cita)">
+                  <ion-icon name="create"></ion-icon> ATENDER
+                </ion-button>
+                <ion-button fill="outline" color="danger" (click)="goToDiagnostico(cita.id_cita)">
+                  <ion-icon name="close"></ion-icon> ANULAR
+                </ion-button>
+              </ion-buttons>
+            </ion-toolbar>
+          </footer>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+
+
+
+</ion-content>

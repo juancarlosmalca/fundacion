@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button color="primary"></ion-back-button>
+    </ion-buttons>
+    <ion-title color="primary">Cargo</ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="outline" color="primary" (click)="agregarCargo()">
+        <ion-icon name="add"></ion-icon>
+        Nuevo</ion-button>
+
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let cargo of cargos">
+      <ion-icon class="icono" name="id-card" slot="start"></ion-icon>
+      <ion-card-header>
+        <ion-card-title><strong class="title">Cargo: </strong>{{cargo.nombre_cargo }}</ion-card-title>
+        <ion-card-subtitle><strong>Funciones: </strong>{{cargo.funciones_cargo}}</ion-card-subtitle>
+      </ion-card-header>
+      <ion-buttons slot="end">
+        <ion-button fill="outline" color="tertiary" (click)="editarCargo(cargo)">
+          <ion-icon name="create"></ion-icon>
+        </ion-button>
+        <ion-button fill="outline" color="danger" (click)="eliminarCargo(cargo.id_cargo)">
+          <ion-icon name="trash"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,39 @@
+<ion-app>
+  <ion-router-outlet>
+  </ion-router-outlet>
+
+<ion-menu side="start" contentId="main-content">
+  <header style="height: 200px; display: flex; align-items: center; justify-content: center;">
+    <img src="assets/pae_logotipo.png" width="50%">
+  </header>
+  <ion-content>
+    <ion-list>
+      <ion-item>
+        <ion-icon color="primary" name="home" slot="start"></ion-icon>
+        <ion-card-header>
+          <ion-label>Inicio</ion-label>
+        </ion-card-header>
+      </ion-item>
+      <ion-item>
+        <ion-icon class="icono" name="person" slot="start"></ion-icon>
+        <ion-card-header>
+          <ion-label>Mi perfil</ion-label>
+        </ion-card-header>
+      </ion-item>
+      <ion-item>
+        <ion-icon class="icono" name="star" slot="start"></ion-icon>
+        <ion-card-header>
+          <ion-label>Calificar</ion-label>
+        </ion-card-header>
+      </ion-item>
+      <ion-item (click)="logout()">
+        <ion-icon class="icono" name="log-out" slot="start"></ion-icon>
+        <ion-card-header>
+          <ion-label>Cerrar Sesión</ion-label>
+        </ion-card-header>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+<ion-router-outlet id="main-content"></ion-router-outlet>
+</ion-app>

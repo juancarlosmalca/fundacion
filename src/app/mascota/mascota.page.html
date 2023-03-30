@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button color="primary"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="title">Animalito</ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="outline" color="primary" (click)="agregarMascota()">
+        <ion-icon name="add"></ion-icon>
+        Nuevo</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="list-container">
+
+    <div *ngFor="let mascota of mascotas">
+      <ion-card>
+        <div class="expired-appointment">
+        </div>
+        <ion-card-content style="padding-right: 0%;">
+          <ion-card-title class="title"><strong>Nombre:</strong>{{mascota.nombre_mascota }}</ion-card-title>
+          <ion-card-subtitle><strong>Especie:</strong>{{mascota.especie_mascota}} </ion-card-subtitle>
+          <ion-card-subtitle><strong>Raza:</strong>{{mascota.raza_mascota}}</ion-card-subtitle>
+          <ion-card-subtitle><strong>Sexo:</strong>{{mascota.sexo_mascota}}</ion-card-subtitle>
+          <ion-card-subtitle><strong>Tamaño:</strong>{{mascota.tamano_mascota}}</ion-card-subtitle>
+  
+      </ion-card-content>
+      <footer>
+        <ion-toolbar>
+          <ion-buttons slot="end">
+            <ion-button fill="outline" color="primary" (click)="verDetalle(mascota.id_mascota)">
+              <ion-icon name="eye"></ion-icon>
+            </ion-button>
+            <ion-button fill="outline" color="tertiary" (click)="editarMascota(mascota)">
+              <ion-icon name="create"></ion-icon>
+            </ion-button>
+            <ion-button fill="outline" color="danger" (click)="eliminarMascota(mascota.id_mascota)">
+              <ion-icon name="trash"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+
+      </footer>
+      </ion-card>
+  
+    </div>
+  </div>
+
+
+
+
+
+</ion-content>

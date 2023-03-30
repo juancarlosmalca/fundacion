@@ -1,0 +1,89 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button color="primary"></ion-back-button>
+    </ion-buttons>
+    <ion-title color="primary">Nuevo animalito</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form (ngSubmit)="onSubmit()">
+    <ion-item>
+      <ion-label position="floating">Nombre:</ion-label>
+      <ion-input type="text" [(ngModel)]="nombre" name="nombre"></ion-input>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label position="floating">Raza:</ion-label>
+
+      <ion-input type="raza" name="raza" [(ngModel)]="raza"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Peso en Kg:</ion-label>
+      <ion-input type="number" name="peso" [(ngModel)]="peso"></ion-input>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label>Sexo:</ion-label>
+
+      <ion-radio-group [(ngModel)]="sexo" name="sexo">
+        <ion-row>
+          <ion-item>
+            <ion-label>Macho</ion-label>
+            <ion-radio slot="start" value="Macho"></ion-radio>
+          </ion-item>
+  
+          <ion-item>
+            <ion-label>Hembra</ion-label>
+            <ion-radio slot="start" value="Hembra"></ion-radio>
+          </ion-item>
+        </ion-row>
+   
+      </ion-radio-group>
+    </ion-item>
+    <ion-item>
+
+      <ion-label>Tamaño:</ion-label>
+      <ion-select placeholder="Seleccione el tamaño" [(ngModel)]="tamano" name="tamano">
+        <ion-select-option value="Grande">Grande</ion-select-option>
+        <ion-select-option value="Mediano">Mediano</ion-select-option>
+        <ion-select-option value="Pequeño">Pequeño</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+
+
+    <ion-item>
+      <ion-label>Especie</ion-label>
+      <ion-select placeholder="Seleccione un tipo de mascota" [(ngModel)]="especie" name="especie">
+        <ion-select-option value="perro">Canino</ion-select-option>
+        <ion-select-option value="gato">Felino</ion-select-option>
+        <ion-select-option value="otro">Otro</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+
+
+
+    <ion-item>
+      <ion-label position="floating">Fecha de nacimiento:</ion-label>
+      <ion-input name="fechaNacimiento" [(ngModel)]="fechaNacimiento" (click)="abrirSelectorFecha()"
+        readonly></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Observaciones</ion-label>
+      <ion-input  type="text" name="observaciones" [(ngModel)]="observaciones"></ion-input>
+    </ion-item>
+    <ion-row>
+      <ion-col size="12" class="ion-text-center">
+        <ion-button type="submit" expand="block">Registrar</ion-button>
+      </ion-col>
+    </ion-row>
+
+  </form>
+</ion-content>

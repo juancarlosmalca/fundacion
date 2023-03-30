@@ -1,0 +1,80 @@
+.header {
+  background: var(--ion-color-primary);
+  box-shadow: none;
+}
+// Definir los valores de la etiqueta de encabezado/pie de página
+header,
+footer {
+  padding: 3em;
+  margin-left: 2px;
+  margin-right: 2px;
+// Agregar una regla flex para navegadores que no admiten la especificación de diseño de cuadrícula CSS.
+  flex: 0 1 100%;
+// Definir los valores de inicio y finalización para la columna de la cuadrícula.
+  grid-column: 1 / -1;
+  text-align: center;
+}
+
+.grid-container {
+  display: grid;
+  padding: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  grid-gap: 10px;
+}
+.list-container {
+  display: grid;
+  padding: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  grid-gap: 20px;
+}
+.expired-appointment:after {
+  content: "";
+  background-color: #81BE41;
+  height: 100%;
+  display: inline-block;
+  width: 0.5rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.grid-item {
+  background-color: #81BE41;
+
+  text-align: center;
+  h2 {
+    font-weight: bold;
+    font-size: medium;
+    color: #fff;
+}
+ion-icon {
+  color: white;
+  size: 8rem;
+}
+}
+  /* Para pantallas de menos de 576px de ancho (móviles pequeños) */
+  @media (max-width: 575.98px) {
+    .imagen {
+      max-width: 100%;
+    }
+    .imageCard {
+      display: none;
+  }
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  }
+  /* Para pantallas de 577px a 768px de ancho (tablets) */
+  @media (min-width: 576px) and (max-width: 767.98px) {
+    .imagen {
+      max-width: 80%;
+    }
+  }
+  /* Para pantallas de más de 768px de ancho (ordenadores) */
+@media (min-width: 768px) {
+  .imagen {
+    max-width: 20%;
+  }
+  .grid-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

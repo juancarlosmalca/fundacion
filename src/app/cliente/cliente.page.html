@@ -1,0 +1,78 @@
+<ion-header>
+  <ion-toolbar class="header">
+    <ion-buttons slot="start">
+      <ion-menu-button class="icono"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+
+  <div class="grid-container">
+
+    <header style="display: flex; align-items: center; justify-content: center;">
+      <img class="imagen" src="assets/pae_logotipo.png">
+    </header>
+    <ion-card (click)="goToMascota()" class="grid-item">
+      <img class="imageCard" alt="Silhouette of mountains" src="assets/dog.jpg" />
+      <ion-card-content>
+        <ion-icon style="zoom:2.0;" name="paw" slot="start"></ion-icon>
+        <h2>Animalitos</h2>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card (click)="goToCita()" class="grid-item">
+      <img class="imageCard" alt="Silhouette of mountains" src="assets/cita.jpg" />
+      <ion-card-content>
+        <ion-icon style="zoom:2.0;" name="calendar" slot="start"></ion-icon>
+        <h2>Citas</h2>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card (click)="goToTratamiento()" class="grid-item">
+      <img class="imageCard" alt="Silhouette of mountains" src="assets/veterinario.jpg" />
+      <ion-card-content>
+        <ion-icon style="zoom:2.0;" name="medkit" slot="start"></ion-icon>
+        <h2>Seguimientos</h2>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card (click)="goToPerfil()" class="grid-item">
+      <img class="imageCard" alt="Silhouette of mountains" src="assets/perfil.jpg" />
+      <ion-card-content>
+        <ion-icon style="zoom:2.0;" name="person" slot="user" class="icono"></ion-icon>
+        <h2>Mi cuenta</h2>
+      </ion-card-content>
+    </ion-card>
+
+  </div>
+  <ion-title color="primary">Citas pendientes:</ion-title>
+
+  <div class="list-container">
+
+  <div *ngFor="let cita of citas">
+    <ion-card>
+      <div class="expired-appointment">
+        
+      </div>
+      <ion-card-content style="padding-right: 0%;">
+      <ion-toolbar>
+        <ion-buttons slot="end">
+          <ion-button>
+            <ion-icon name="close"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+          <ion-card-subtitle><strong class="title">{{ cita.nombre_mascota }} </strong> - {{ cita.motivo_cita
+            }}</ion-card-subtitle>
+          <ion-card-subtitle><ion-icon name="time-outline"></ion-icon>
+            <strong> {{cita.fecha_cita}}: </strong>{{ cita.hora_inicio }} - {{ cita.hora_fin }}</ion-card-subtitle>
+      </ion-toolbar>
+    </ion-card-content>
+
+    </ion-card>
+
+  </div>
+</div>
+
+
+</ion-content>

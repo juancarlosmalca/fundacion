@@ -1,0 +1,7 @@
+{
+  "name": "pae-aplication",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

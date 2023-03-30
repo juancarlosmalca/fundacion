@@ -1,0 +1,93 @@
+.bg-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../../assets/dog.jpg');
+  background-size: cover;
+  filter: blur(10px);
+}
+.bg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  
+  // IF the browser DOES support the CSS Grid Layout specification
+  // then the following rules are applied instead
+  .wrapper {
+    display: grid;
+  
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+    grid-auto-rows: minmax(150px, auto);
+  
+  }
+  
+  header,
+  footer {
+    padding: 3em;
+    margin-left: 5px;
+    margin-right: 5px;
+    flex: 0 1 100%;
+    grid-column: 1 / -1;
+    text-align: center;
+  }
+
+  .box {
+    border-radius: 5px;
+    padding: 3em;
+    margin-left: 5px;
+    margin-right: 5px;
+    align-items: center;
+    text-align: center;
+    // Add a flex rule for browsers not supporting the
+    // CSS Grid Layout spec
+    flex: 1 1 300px;
+  
+  
+  }
+  
+  .green {
+     background-color: #81BE41
+  }
+  .grid-container {
+    display: grid;
+    padding: 30px;
+  
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+    grid-gap: 20px;
+  }
+  
+  .grid-item {
+    padding: 20px;
+    text-align: center;
+    h2 {
+      font-weight: bold;
+      font-size: medium;
+      color: #fff;
+  }
+  }
+  ion-icon {
+    color: white;
+    size: 8rem;
+  }
+  .logo {
+    max-width: 100%;
+    margin-top: 30px;
+  }

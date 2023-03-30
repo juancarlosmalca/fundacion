@@ -1,0 +1,45 @@
+.container{
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+.content {
+  flex-grow: 1;
+  overflow: auto;
+  max-width: 100%;
+}
+.wrapper  {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.left-bg  {
+  position: absolute;
+  width: 50vw;
+  height: 100vh;
+  background: 100% url(/../../../assets/mascota.jpg) no-repeat;
+  left: 0;
+  background-size: cover;
+}
+
+.login-container  {
+  text-align: center;
+  padding: 3rem;
+  width: 50%;
+  box-sizing: border-box;
+  
+}
+.login-container  form  {
+  max-width: 400px;
+}
+
+@media only screen and (max-width: 768px){
+.left-bg {
+    display: none;
+}
+.login-container  {
+  width: 100%;
+}
+}

@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button color="primary"></ion-back-button>
+    </ion-buttons>
+    <ion-title color="primary">Citas</ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="outline" color="primary" (click)="agregarCita()" >
+        <ion-icon name="add"></ion-icon>
+        <strong class="title">Agendar</strong></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let cita of citas">
+      <ion-icon class="icono" name="calendar" slot="start"></ion-icon>
+      <ion-card-header>
+        <ion-card-title><strong class="title">Fecha: </strong>{{cita.fecha_cita}}</ion-card-title>
+        <p><strong class="title">Animalito: </strong> {{ cita.nombre_mascota }}</p>
+        <p><strong class="title">Motivo: </strong> {{ cita.motivo_cita }}</p>
+        <p><strong class="title">Hora: </strong> {{ cita.hora_inicio }} - {{ cita.hora_fin }}</p>
+      </ion-card-header>
+      
+      <ion-buttons slot="end">
+        <ion-button fill="outline" color="primary" (click)="verDetalle(cita.id_cita)">
+          <ion-icon name="eye"></ion-icon>
+        </ion-button>
+        <ion-button fill="outline" color="tertiary" (click)="editarCita(cita)">
+          <ion-icon name="create"></ion-icon>
+        </ion-button>
+        <ion-button fill="outline" color="danger" (click)="eliminarCita(cita.id_cita)">
+          <ion-icon name="trash"></ion-icon>
+        </ion-button>
+      </ion-buttons>    </ion-item>
+  </ion-list>
+</ion-content>

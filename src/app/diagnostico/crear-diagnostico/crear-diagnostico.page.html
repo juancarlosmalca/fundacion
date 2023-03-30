@@ -1,0 +1,106 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button color="primary"></ion-back-button>
+    </ion-buttons>
+    <ion-title color="primary">Diagnostico</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="list-container">
+    <ion-card>
+      <ion-card-header>
+        <ion-icon name="medkit-outline" slot="start"></ion-icon>
+        <ion-card-title class="title"><ion-icon class="icono" name="calendar"></ion-icon> Cita </ion-card-title>
+      </ion-card-header>
+      <ion-card-content class="contenedor">
+        <ion-item>
+          <p> <strong>N°:</strong> {{ cita.id_cita }}</p>
+        </ion-item>
+        <ion-item>
+          <p> <strong>Fecha:</strong> {{ cita.fecha_cita }}</p>
+        </ion-item>
+        <ion-item>
+          <p> <strong>Motivo:</strong> {{ cita.motivo_cita }}</p>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+
+
+    <ion-card>
+      <ion-card-header>
+        <ion-icon name="medkit-outline" slot="start"></ion-icon>
+        <ion-card-title class="title"><ion-icon class="icono" name="paw"></ion-icon>Animalito:</ion-card-title>
+      </ion-card-header>
+      <ion-card-content class="contenedor">
+        <ion-item>
+          <p> <strong>Nombre:</strong> {{ mascota.nombre_mascota }}</p>
+        </ion-item>
+        <ion-item>
+          <p> <strong>Especie:</strong> {{ mascota.especie_mascota }}</p>
+        </ion-item>
+        <ion-item>
+          <p> <strong>Raza:</strong> {{ mascota.raza_mascota }}</p>
+        </ion-item>
+        <ion-item>
+          <p> <strong>Peso:</strong> {{ mascota.peso_mascota }}</p>
+        </ion-item>
+        <ion-item>
+          <p> <strong>Edad:</strong> {{ mascota.nacimiento_mascota }}</p>
+        </ion-item>
+        <ion-item>
+          <p> <strong>Observaciones:</strong> {{ mascota.observaciones_mascota }}</p>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+  </div>
+  <ion-card>
+    <form (ngSubmit)="onSubmit()">
+
+
+      <ion-card-header>
+        <ion-icon name="medkit-outline" slot="start"></ion-icon>
+        <ion-card-title class="title"><ion-icon class="icono" name="paw"></ion-icon>Descripción
+          Diagnostico:</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-input type="text" [(ngModel)]="id_personal" name="id_personal" value="id_personal"></ion-input>
+
+        <ion-item fill="outline">
+          <ion-label position="floating">Descripción</ion-label>
+          <ion-input name="diagnostico" [(ngModel)]="diagnostico" required
+            placeholder="Descripcion del diagnostico"></ion-input>
+        </ion-item>
+      </ion-card-content>
+
+
+      <ion-card-header>
+
+        <ion-card-title class="title">Tratamiento</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-item fill="outline">
+          <ion-label position="floating">Descripción</ion-label>
+          <ion-input name="tratamiento" [(ngModel)]="tratamiento" required
+            placeholder="Descripcion del tratamiento"></ion-input>
+        </ion-item>
+        <br>
+
+        <ion-item fill="outline">
+
+          <ion-label position="floating">Duración en días</ion-label>
+          <ion-input name="duracion" [(ngModel)]="duracion" type="number" required placeholder=""></ion-input>
+        </ion-item>
+      </ion-card-content>
+
+      <ion-row>
+        <ion-col size="12" class="ion-text-center">
+          <ion-button type="submit" expand="block">Guardar</ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-card>
+</ion-content>

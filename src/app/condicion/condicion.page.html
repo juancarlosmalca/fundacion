@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button color="primary"></ion-back-button>
+    </ion-buttons>
+    <ion-title color="primary">Fechas bloqueadas</ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="outline" color="primary" (click)="agregarCondicion()">
+        <ion-icon name="add"></ion-icon>
+        Nuevo</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let condicion of condicions">
+      <ion-icon class="icono" name="calendar" slot="start"></ion-icon>
+      <ion-card-header>
+        <ion-card-title class="title"><strong>Fecha: </strong>{{condicion.fecha_condicion }}</ion-card-title>
+        <ion-card-subtitle><strong>Estado: </strong>{{condicion.estado_condicion}}</ion-card-subtitle>
+      </ion-card-header>
+      <ion-buttons slot="end">
+        <!--
+        <ion-button fill="outline" color="tertiary" (click)="editarCondicion(condicion)">
+          <ion-icon name="create"></ion-icon>
+        </ion-button>
+        -->
+        <ion-button fill="outline" color="danger" (click)="eliminarCondicion(condicion.id_condicion)">
+          <ion-icon name="trash"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+  </ion-list>
+</ion-content>

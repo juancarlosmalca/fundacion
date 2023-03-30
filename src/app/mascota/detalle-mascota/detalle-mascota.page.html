@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button color="primary"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card-header>
+    <ion-item>
+      <ion-icon color="primary" class="icono" name="paw" slot="start"></ion-icon>
+      <ion-card-title><strong>Nombre Animalito:</strong>{{ mascota.nombre_mascota }}</ion-card-title>
+    </ion-item>
+</ion-card-header>
+  <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label><strong>Especie: </strong>{{mascota.especie_mascota}} </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label><strong>Raza: </strong>{{mascota.raza_mascota}} </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label><strong>Sexo: </strong>{{mascota.sexo_mascota}} </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label><strong>Peso: </strong>{{mascota.peso_mascota}} </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label><strong>Tamaño: </strong>{{mascota.tamano_mascota}} </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label><strong>Fecha de nacimiento: </strong>{{mascota.nacimiento_mascota}} </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label><strong>Observaciones: </strong>{{mascota.observaciones_mascota}} </ion-label>
+        </ion-item>
+      </ion-list>
+  </ion-card-content>
+</ion-content>

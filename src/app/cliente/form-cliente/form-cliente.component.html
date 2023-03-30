@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{title}}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="solid" color="danger" (click)="cancel()"><ion-icon name="close"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-title><strong>Información Personal:</strong></ion-title>
+  <!-- Formulario informacion personal del cliente -->
+  <form [formGroup]="formCliente">
+    <div hidden>
+      <input type="text" name="id_cliente" readonly formControlName="id_cliente">
+    </div>
+    <ion-card-content>
+      <ion-item fill="outline">
+        <ion-label position="floating">Nombre:</ion-label>
+        <ion-input type="name" name="nombre_cliente" formControlName="nombre_cliente"></ion-input>
+      </ion-item>
+      <br>
+      <ion-item fill="outline">
+        <ion-label position="floating">Apellido:</ion-label>
+        <ion-input type="surname" name="apellido_cliente" formControlName="apellido_cliente"></ion-input>
+      </ion-item>
+      <br>
+      <ion-item fill="outline">
+        <ion-label position="floating">Cédula:</ion-label>
+        <ion-input type="number" name="cedula_cliente" formControlName="cedula_cliente"></ion-input>
+      </ion-item>
+      <br>
+      <ion-item fill="outline">
+        <ion-label position="floating">Teléfono:</ion-label>
+        <ion-input type="tel" name="telefono_cliente" formControlName="telefono_cliente"></ion-input>
+      </ion-item>
+      <br>
+      <ion-item fill="outline">
+        <ion-label position="floating">Dirección:</ion-label>
+        <ion-input type="text" name="direccion_cliente" formControlName="direccion_cliente"></ion-input>
+      </ion-item>
+        <!-- Formulario informacion autenticación del cliente -->
+      <ion-title><strong>Información de Autentificación:</strong></ion-title>
+      <form [formGroup]="formUsuario">
+        <ion-item fill="outline">
+          <ion-label position="floating">Email</ion-label>
+          <ion-input type="email" name="email_usuario" formControlName="email_usuario"></ion-input>
+        </ion-item>
+        <br>
+        <!-- El siguiente código solo se mostrará si se está creando un nuevo usuario -->
+        <ion-item fill="outline" [hidden]="!visible">
+          <ion-label position="floating">Contraseña</ion-label>
+          <ion-input type="password" name="password_usuario" formControlName="password_usuario"></ion-input>
+        </ion-item>
+        <!-- El siguiente código solo se mostrará si se está editando un usuario -->
+        <br>
+        <ion-item [hidden]="visible">
+          <a href="URL_DE_RESET_PASSWORD">Restaurar Contraseña</a>
+        </ion-item>
+      </form>
+    </ion-card-content>
+  </form>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button fill="solid" color="danger" (click)="cancel()">Cancelar</ion-button>
+      <ion-button fill="solid" color="success" (click)="save()">Guardar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

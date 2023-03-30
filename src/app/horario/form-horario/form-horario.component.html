@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{title}}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="solid" color="danger" (click)="cancel()"><ion-icon name="close"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <form [formGroup]="formHorario">
+    <div>
+      <input type="hidden" name="id_horario" readonly formControlName="id_horario">
+    </div>
+    <ion-card-content>
+  
+        <ion-item>
+          <ion-label>Hora Inicio:</ion-label>
+          <ion-datetime presentation="time"  displayFormat="HH:mm" name="hora_inicio" formControlName="hora_inicio"></ion-datetime>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label>Hora Fin:</ion-label>
+          <ion-datetime presentation="time"  displayFormat="HH:mm" name="hora_fin" formControlName="hora_fin"></ion-datetime>
+        </ion-item>
+  
+        
+    </ion-card-content>
+    <ion-footer>
+      <ion-toolbar>
+        <ion-buttons slot="end">
+          <ion-button fill="solid" color="danger" (click)="cancel()">Cancelar</ion-button>
+          <ion-button fill="solid" color="success" (click)="save()">Guardar</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-footer>
+  </form>
+</ion-content>

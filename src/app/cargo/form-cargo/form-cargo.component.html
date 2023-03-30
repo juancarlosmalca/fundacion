@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{title}}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="solid" color="danger" (click)="cancel()"><ion-icon name="close"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <form [formGroup]="formCargo">
+    <div>
+      <input type="hidden" name="id_cargo" readonly formControlName="id_cargo">
+    </div>
+    <ion-card-content>
+      <ion-item fill="outline">
+        <ion-label position="floating">Nombre del Cargo</ion-label>
+        <ion-input type="text" name="nombre_cargo" formControlName="nombre_cargo" required
+          placeholder="Nombre Cargo"></ion-input>
+      </ion-item>
+      <br>
+      <ion-item fill="outline">
+        <ion-label position="floating">Descriipción de Funciones</ion-label>
+        <ion-input type="text" name="funciones_cargo" formControlName="funciones_cargo" required
+          placeholder="Funcciones"></ion-input>
+      </ion-item>
+    </ion-card-content>
+    <ion-footer>
+      <ion-toolbar>
+        <ion-buttons slot="end">
+          <ion-button fill="solid" color="danger" (click)="cancel()">Cancelar</ion-button>
+          <ion-button fill="solid" color="success" (click)="save()">Guardar</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-footer>
+  </form>
+</ion-content>

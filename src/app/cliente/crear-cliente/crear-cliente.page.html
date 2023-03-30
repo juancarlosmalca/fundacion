@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button color="primary"></ion-back-button>
+    </ion-buttons>
+    <ion-title color="primary">Registro</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <form (ngSubmit)="onSubmit()">
+    <ion-item>
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input type="name" name="name" [(ngModel)]="name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Apellido</ion-label>
+      <ion-input type="surname" name="surname" [(ngModel)]="surname"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Cedula</ion-label>
+      <ion-input type="cedula" name="cedula" [(ngModel)]="cedula"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Direción</ion-label>
+      <ion-input type="address" name="address" [(ngModel)]="address"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Telefono</ion-label>
+      <ion-input type="phone" name="phone" [(ngModel)]="phone"></ion-input>
+    </ion-item>
+    
+    <ion-row>
+      <ion-col size="12" class="ion-text-center">
+        <ion-button type="submit" expand="block">Siguiente</ion-button>
+      </ion-col>
+    </ion-row>
+
+  </form>
+</ion-content>
